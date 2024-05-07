@@ -11,7 +11,15 @@ class Member(db.Model):
     password = db.Column(db.String(255))
 
 
-
+    def to_dict(self):
+        return {
+            "member_id":self.member_id,
+            "first_name":self.first_name,
+            "last_name":self.last_name,
+            "email":self.email,
+            "registration_date":self.registration_date,
+            "password":self.password
+        }
 
 
 
